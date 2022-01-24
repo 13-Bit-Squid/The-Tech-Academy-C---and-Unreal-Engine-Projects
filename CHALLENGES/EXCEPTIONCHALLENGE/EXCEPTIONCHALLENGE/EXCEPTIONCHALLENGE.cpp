@@ -1,19 +1,31 @@
-// PROTECTED KEYWORD CHALLENGE.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// EXCEPTIONCHALLENGE.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
+#include <string>
 
 using namespace std;
 
-class ProtClass
-{
-protected:
-    int prot; //can be accessed in inherited classes
-};
-
 int main()
 {
-    std::cout << "Hello World!\n";
+	try
+	{
+		int armyPts = 800;
+		if (armyPts >= 1000)
+		{
+			cout << "You're ready for a very sizeable battle!\n";
+		}
+		else
+		{
+			throw (armyPts);
+		}
+	}
+	catch (int currentPts)
+	{
+		cout << "Your army has too few points in it for a large battle!\n";
+		cout << "Your current points are: " << currentPts;
+
+	}
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

@@ -1,4 +1,4 @@
-// PROTECTED KEYWORD CHALLENGE.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// INHERITANCECHALLENGE.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
@@ -9,6 +9,24 @@ class ProtClass
 {
 protected:
     int prot; //can be accessed in inherited classes
+};
+
+class MoProtClass : public ProtClass
+{
+
+};
+
+class MultiClass : public ProtClass, public MoProtClass
+{
+
+};
+
+class UnProtClass :  public ProtClass
+{
+public:
+    int showProt() {
+        return prot;
+    }
 };
 
 int main()
